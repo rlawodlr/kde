@@ -1,8 +1,25 @@
+import java.util.List;
+
+import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
+import kr.co.shineware.util.common.model.Pair;
+
 
 public class jack {
 	
 	public static void main(String[] args) {
-		System.out.println("안녕");
-	}
+		 Komoran komoran = new Komoran("C:\\Users\\Jack\\Downloads\\models");
+	      
+	      List<List<Pair<String,String>>> result = komoran.analyze("저는대학생이구요 감자, 감, 배 소프트웨어관련학과입니다 DB는수업을한번들은적이있으며 수학은대학에서통계학 선형대수학 이산수학 대학수학등을배웠지만.. 자주사용을안하다보니모두까먹은상태입니다");
+	       
+	      for (List<Pair<String, String>> eojeolResult : result) {
+	             for (Pair<String, String> wordMorph : eojeolResult) {
+	            	 System.out.println(wordMorph);
+	                
+
+	             }
+	              System.out.println();
+	       }
+
+	   }
 
 }
